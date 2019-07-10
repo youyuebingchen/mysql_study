@@ -29,4 +29,10 @@ sql_study 1、抗生/2、微生物检测
   - and ：select * from table where age > 18 and age<28
   - or : select * from table where age >18 or gender =女
   - not : select * from table where not (age >18 or gender =女) :注意not 在哪里表示否定哪个条件，比如不加括号只否定第一个条件年龄。
-  
+- 模糊查询
+   - like 
+      - select name from table where name like '%小%'  % 号替换一个或者多个
+      - select name from table where name like '__'    _号代表替换一个 
+      - select name from table where name like '__%' 找出包含两个以上的
+   - rlike 正则查询
+      - select name from table where name rlike '^周.*伦$'
