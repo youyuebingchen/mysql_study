@@ -1,6 +1,8 @@
 # mysql_study
 sql_study 1、抗生/2、微生物检测
-sql 语句虽然结果都能出来，但是对于大量数据时时间有很大差别
+<br>sql 语句虽然结果都能出来，但是对于大量数据时时间有很大差别
+<br> 在查询之前一定要观察数据，防止重复查询浪费时间，
+<br>例子：使用mimic数据库，我在已知icustat_id的情况先查询admission里病人的信息时，需要先通过icustat_id来查询charevet表里的subject_id使用inner join但是这样查出来的subjec_id是大量重复的，如果此时再用其查询admission里病人的信息会做大量的重复工作，所以，一定要先用distinct去除重复，然后再查询。
 ## 创建数据库
 - create database python_test charset=utf8
 - use python_test 
