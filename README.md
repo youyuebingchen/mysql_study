@@ -124,4 +124,7 @@ sql_study 1、抗生/2、微生物检测
    - select * from v_table
 - 删除视图
    - drop view 视图名
-## group
+## tips 
+- coalesce() 只取一个非空就返回，比如我们要登记用户的电话，数据库中包含他的person_tel,home_tel,office_tel,我们只要取一个非空的就可以，则我们可以写查询语句 select COALESCE(person_tel,home_tel,office_tel) as contact_number from Contact
+
+
