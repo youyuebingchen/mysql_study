@@ -64,6 +64,8 @@ sql_study 1、抗生/2、微生物检测
       - select count(*) as 男性人数 from table where gender = 1
    - 最大值 max()
       - select max(age) from table where gender = 1
+   - max() 和 group by 以a,b,进行分组c,d 取条件中最大的哪条，c,d,两列做或
+      - select a,b,max(...) as c,max(...) as d group by a,b 
    - 最小值 min()
       - select min(age) from table where gender = 1
    - 求和 sum()
@@ -73,6 +75,9 @@ sql_study 1、抗生/2、微生物检测
       - select sum(age)/count(*) from table where gender = 1
    - 四舍五入保留一位小数点 round(12.34,1) c语言在底层小数点的时候都是约等于很多解释器都是用c，银行的里一定不会用约等于，而是直接扩大多少倍取时在除以倍数
       - select round(sum(age)/count(*),2) from table where gender = 1
+   - lag 对某列进行偏移操作，parttion by 之根据哪些列分组，order by指根据哪一列排序
+      - lag(列名，偏移量，超出默认值)  over(parttion by ...   order by ...)
+   
  - 分组 
    - group by 要分组后每一组都一样的，分组一定要和聚合函数一块用材有意义
       - select gender,avg(age) from student group by gender
@@ -119,4 +124,4 @@ sql_study 1、抗生/2、微生物检测
    - select * from v_table
 - 删除视图
    - drop view 视图名
-      
+## group
