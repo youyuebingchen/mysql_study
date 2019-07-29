@@ -109,6 +109,8 @@ sql_study 1、抗生/2、微生物检测
    - select * from table where height = (select max(height) from table)
  - 连接查询和子查询并用。
    - select * from （select cate_name,max(price)）as g_new left join goods as g on g_new,cat_name=g.cate_name and g_new.price = g.price
+ - rows 取当前行前2列和当前行后2列
+   -select name,class,s, sum(s)over(order by s rows between 2 preceding and 2 following) mm from t2
 ## 视图
 通俗讲视图就是一条select语句执行后返回的结果集，视图是对若干张基本表的引用，相当一张虚拟的表，是查询语句的结果，不存储具体的数据，基本表发生改变，视图也会跟着发生改变。往往用在查数据，而不用来修改数据的。不能进行修改数据。
 - 视图作用
